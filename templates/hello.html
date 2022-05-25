@@ -4,5 +4,29 @@
     </head>
     <body>
         <h1>Hello Word!</h1>
+        <p>
+            {% if not nome_pessoa %}
+                Inacreditável. Faça Login estranho.
+            {% else %}
+                and hello {{ nome_pessoa }}    
+            {% endif %}        
+            {% for entrada in nome_pessoa %}
+                {% if not entrada %}
+                    <em>Inacreditável. Faça Login estranho.</em>
+                {% else %}
+                    <h2>Hello {{ entrada }}</h2>
+                {% endif %}
+            {% endfor %}
+        </p>
+        <img src="http://pudim.com.br/pudim.jpg">
+
+        <hr/>
+
+        <h1 id="Titulo"><span>Hello</span></h1>
+        {% for entrada in entradas: %}
+        <h2> {{ entrada.titulo }} </h2>
+        <p> {{ entrada.texto }} </p>
+        <p>{{ entrada.criado_em }}</p>
+        {% endfor %}
     </body>
 </html>
